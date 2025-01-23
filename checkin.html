@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title> チェックイン </title>
+</head>
+<body>
+
+<script>
+//今日の日付データを変数に格納
+//変数は"today"とする
+var today = new Date(); 
+
+//年・月・日・曜日を取得
+var year = today.getFullYear();
+var month = today.getMonth()+1;
+var week = today.getDay();
+var day = today.getDate();
+</script>
+
+<h1>今何のんでる？</h1>
+
+<h2>チェックイン日時の設定</h2>
+<input type="checkbox" name="checkNow" checked /> 現在日時でチェックインする <br>
+
+<h2>飲んだドリンクの設定</h2>
+飲み物の名前 <input type="text" placeholder="コココーラゼロ 500mL缶" name="drinkName" /> <br>
+タグ(半角区切りで入力) <input type="text" placeholder="炭酸 コーラ ゼロシュガー" name="tags" /> <br>
+
+コメント <br>
+<textarea name="example" cols="50" rows="10"></textarea>
+<form method="CHECKIN" action="checkin.php">
+
+<h2>チェックインの設定</h2>
+<input type="checkbox" name="checkProvate" /> このチェックインを非公開にする <br>
+<input type="checkbox" name="checkDisabled" /> 前回チェックインからの経過時間を記録しない <br>
+
+<input type="submit" value="チェックインする" /?>
+</form>
+<P><A href="timeline.html"> タイムラインに戻る </A>
+</body>
+</html>
